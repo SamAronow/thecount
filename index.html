@@ -1,0 +1,29 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter App</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body>
+    <script src = "index.js"></script>
+    <h1>Counter App</h1>
+    <p>Count: <span id="count"></span></p>
+    <button id="incrementBtn" onclick = "increment()">Increment</button>
+
+    <script>
+        const countLabel = document.getElementById('count');
+        const incrementBtn = document.getElementById('incrementBtn');
+        database.ref('count').once('value').then(function(snapshot) {
+     countLabel.innerHTML = snapshot.val();;
+     //console.log(countValue)
+  }).catch(function(error) {
+    console.error("Error reading count:", error);
+  });
+
+        
+
+    </script>
+</body>
+</html>
